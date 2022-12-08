@@ -1,0 +1,43 @@
+*:not(code) {
+    font-family: sans-serif
+  }
+  p {
+    font-size: 1rem
+  }
+  header:not(#nav-header) {
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: bold;
+    color: maroon;
+    border-bottom: 1px solid;
+    padding-bottom: -5px
+  }
+  
+  h4 {
+    margin-bottom: -12px
+  }
+  .bold {
+    font-weight: bold
+  }
+  
+  .nav-section {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+  }
+  
+  main {
+    margin-left: 160px;
+    padding: 0px 10px;
+  }
+  
+  @media (max-width: 768px) {
+    
+  
+  }
