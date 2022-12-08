@@ -1,13 +1,41 @@
+:root {
+    --main-white: #f0f0f0;
+    --main-red: #be3144;
+    --main-blue: #45567d;
+    --main-gray: #303841;
+}
+
 * {
     margin: 0;
     padding: 0;
-  }
+}
+
+html {
+    box-sizing: border-box;
+  
+    /* Set font size for easy rem calculations
+     * default document font size = 16px, 1rem = 16px, 100% = 16px
+     * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+    */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 2rem;
-    color: rgb(148, 58, 58);
+    color: var(--main-white);
 }
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+}
+
+/* nav */
 
 #navbar {
     width: 100%;
@@ -38,6 +66,8 @@ a {
     color: rgb(187, 39, 39);
 }
 
+/* Welcome section */
+
 #welcome-section {
     display: flex;
     flex-direction: column;
@@ -49,9 +79,80 @@ a {
     background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
 }
 
-#projects {
-    
+/* Projects section */
+
+.projects-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: rgb(10, 10, 88);
 }
+  
+.projects-section-header {
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid white;
+}
+  
+@media (max-width: 28.75em) {
+    .projects-section-header {
+      font-size: 4rem;
+    }
+}
+
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+  
+@media (max-width: 30.625em) {
+    .projects-section {
+      padding: 6rem 1rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+}
+  
+.project {
+    background: var(--main-gray);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+  
+.code {
+    color: var(--main-gray);
+    transition: color 0.3s ease-out;
+}
+  
+.project:hover .code {
+    color: #ff7f50;
+}
+  
+.project-image {
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+}
+  
+.project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+}
+  
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+}
+  
+/* Contact section */
 
 .contact-detail {
     font-family: 'Poppins', sans-serif;
